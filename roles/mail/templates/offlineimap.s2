@@ -1,7 +1,0 @@
-[Unit]
-Description=Offlineimap sync
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/offlineimap
-ExecStart=/bin/zsh -c "PATH=/home/{{ ansible_user_id }}/.local/bin:$PATH mailboxes-splitter /home/{{ ansible_user_id }}/.config/mutt Privat"

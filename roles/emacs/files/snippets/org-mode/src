@@ -1,7 +1,0 @@
-#-*- mode: snippet -*-
-# name: Source Code
-# key: src
-# --
-#+BEGIN_SRC ${1:lang}
-  $2
-#+END_SRC

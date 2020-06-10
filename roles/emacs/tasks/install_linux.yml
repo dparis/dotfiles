@@ -1,5 +1,0 @@
-- name: install emacs on linux
-  package:
-    name: emacs
-    state: present
-  become: yes

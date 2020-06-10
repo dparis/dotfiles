@@ -1,7 +1,0 @@
-- name: install neovim on linux
-  package:
-    name:
-      - neovim
-      - python-neovim
-    state: present
-  become: yes

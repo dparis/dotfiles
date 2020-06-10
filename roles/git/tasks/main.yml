@@ -3,6 +3,7 @@
     name: git
     state: present
 
+# TODO:  Set up gitconfig
 - name: symlink gitconfig
   file:
     src: "{{ ansible_env.PWD }}/roles/git/files/gitconfig"

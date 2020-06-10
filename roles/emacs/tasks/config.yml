@@ -3,6 +3,7 @@
     path: ~/.emacs.d
     state: directory
 
+# TODO: Set up doom/spacemacs
 - name: symlink files
   file:
     src: "{{ ansible_env.PWD }}/roles/emacs/files/{{ item }}"
@@ -11,7 +12,7 @@
     follow: false
     force: yes
   loop:
-    - init.el
-    - modeline-dark.el
-    - modeline-light.el
-    - snippets
+    # - init.el
+    # - modeline-dark.el
+    # - modeline-light.el
+    # - snippets
