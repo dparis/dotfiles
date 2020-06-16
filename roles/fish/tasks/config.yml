@@ -6,6 +6,40 @@
     follow: false
     force: yes
   loop:
-    # - config.fish
-    # - fish_variables
-    # - functions
+    - config.fish
+    - fishfile
+
+- name: install fisher
+  block:
+    - name: ensure fish functions directory exists
+      file:
+        path: ~/.config/fish/functions
+        state: directory
+    - name: download fisher
+      get_url:
+        url: https://git.io/fisher
+        dest: ~/.config/fish/functions/fisher.fish
+
+- name: install fisher packages
+  shell:
+    cmd: fisher
+    executable: fish
+  register: result
+  until: result.stderr.find("fetching") != -1
+  retries: 5
+  delay: 2
+
+- name: download omf installer
+  get_url:
+    url: https://get.oh-my.fish
+    dest: "{{ ansible_env.PWD }}/omf_install"
+
+- name: install omf
+  command: fish omf_install --noninteractive --yes
+  args:
+    chdir: "{{ ansible_env.PWD }}"
+
+- name: remove installer
+  file:
+    path: "{{ ansible_env.PWD }}/omf_install"
+    state: absent

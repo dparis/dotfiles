@@ -1,0 +1,14 @@
+- name: tap fonts cask
+  homebrew_tap: 
+    name: homebrew/cask-fonts
+    state: present
+
+- name: install jetbrainsmono nerd font
+  homebrew_cask:
+    name: font-jetbrainsmono-nerd-font
+    state: present
+
+- name: install starship prompt
+  homebrew:
+    name: starship
+    state: present

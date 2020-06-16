@@ -1,4 +1,4 @@
-- name: Setup local environment
+- name: setup local environment
   hosts: localhost
   roles:
     - base

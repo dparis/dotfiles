@@ -1,7 +1,9 @@
-- name: Setup local environment
+- name: setup local environment
   hosts: localhost
   roles:
     - base
-    - git
+    - starship
+    - iterm2
     - fish
-    - emacs
+    # - git
+    # - emacs

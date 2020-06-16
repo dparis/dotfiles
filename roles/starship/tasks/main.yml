@@ -1,0 +1,4 @@
+- include_tasks: install_darwin.yml
+  when: ansible_facts['os_family'] == "Darwin"
+- include_tasks: install_linux.yml
+  when: ansible_facts['os_family'] == "Archlinux"
