@@ -6,8 +6,6 @@
       - gmp
       - htop
       - jq
-      - leiningen
-      - rbenv
       - ripgrep
       - tree
       - watch

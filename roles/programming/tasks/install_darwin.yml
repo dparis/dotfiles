@@ -1,0 +1,17 @@
+# Ruby
+- name: install rbenv
+  package:
+    name: rbenv
+    state: present
+
+# Java
+- name: install jenv
+  package:
+    name: jenv
+    state: present
+
+# Clojure
+- name: install leiningen
+  package:
+    name: leiningen
+    state: present

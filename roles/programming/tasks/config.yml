@@ -1,0 +1,14 @@
+# Ruby
+- name: install fish-rbenv
+  shell:
+    cmd: fisher add rbenv/fish-rbenv
+    executable: fish
+
+# Java
+- name: enable jenv in fish shell
+  copy:
+    src: "{{ ansible_env.PWD }}/roles/programming/files/{{ item }}"
+    dest: "~/.config/fish/functions/{{ item }}"
+  with_items:
+    - jenv.fish
+    - export.fish
