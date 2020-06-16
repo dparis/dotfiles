@@ -19,9 +19,21 @@ done
 os="$(uname)"
 
 if [ "$os" = "Darwin" ]; then
+    if ! [ -x "$(command -v brew)" ]; then
+        echo "Installing homebrew"
+        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+    fi
+
+    if ! [ -x "$(command -v ansible-playbook)" ]; then
+        echo "Install ansible"
+        brew install ansible
+    fi
+
+    echo "Running mac ansible playbook"
     ansible-playbook --ask-become-pass \
                      -i hosts \
                      mac.yml
+
 elif [ "$os" = "Linux" ]; then
     ansible-playbook --ask-become-pass \
                      -i hosts \
