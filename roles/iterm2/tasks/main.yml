@@ -1,0 +1,25 @@
+- name: install iterm2 on darwin
+  homebrew_cask:
+    name: iterm2
+    state: present
+
+- name: create iterm2 config directory
+  file:
+    path: ~/.config/iterm2
+    state: directory
+
+- name: symlink files
+  file:
+    src: "{{ ansible_env.PWD }}/roles/iterm2/files/{{ item }}"
+    path: "~/.config/iterm2/{{ item }}"
+    state: link
+    follow: false
+    force: yes
+  loop:
+    - "com.googlecode.iterm2.plist"
+
+- name: configure iterm2 to load prefs from custom directory
+  command: "defaults write com.googlecode.iterm2.plist {{ item }}"
+  with_items:
+    - PrefsCustomFolder -string "~/.config/iterm2"
+    - LoadPrefsFromCustomFolder -bool true

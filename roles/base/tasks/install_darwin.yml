@@ -1,2 +1,14 @@
-# TODO:  Add list of brew packages to install
 - name: make sure packages are installed
+  package:
+    name:
+      - awscli
+      - bash
+      - gmp
+      - htop
+      - jq
+      - leiningen
+      - rbenv
+      - ripgrep
+      - tree
+      - watch
+      - wget
