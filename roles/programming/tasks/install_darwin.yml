@@ -15,3 +15,9 @@
   package:
     name: leiningen
     state: present
+
+# Javascript
+- name: install fnm
+  homebrew:
+    name: Schniz/tap/fnm
+    state: present
