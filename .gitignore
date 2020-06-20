@@ -1,2 +1,3 @@
 tags
 *.retry
+.DS_Store
