@@ -1,0 +1,3 @@
+- name: start emacs daemon service
+  command: brew services restart emacs-plus@27
+

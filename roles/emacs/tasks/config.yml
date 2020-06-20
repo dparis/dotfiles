@@ -1,18 +1,18 @@
-- name: create emacs.d config directory
-  file:
-    path: ~/.emacs.d
-    state: directory
+- name: install spacemacs
+  git:
+    repo: https://github.com/syl20bnr/spacemacs
+    dest: ~/.emacs.d
+    force: yes
+    version: develop
 
-# TODO: Set up doom/spacemacs
-- name: symlink files
+- name: symlink files into home directory
   file:
     src: "{{ ansible_env.PWD }}/roles/emacs/files/{{ item }}"
-    path: "~/.emacs.d/{{ item }}"
+    path: "~/{{ item }}"
     state: link
     follow: false
     force: yes
   loop:
-    # - init.el
-    # - modeline-dark.el
-    # - modeline-light.el
-    # - snippets
+    - .spacemacs
+
+# symlink files into .emacsd private

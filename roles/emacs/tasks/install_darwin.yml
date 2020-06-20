@@ -1,9 +1,33 @@
+- name: install gnupg for verified packages from spacelpa
+  homebrew:
+    name: gnupg
+    state: present
+
+- name: install cmake
+  homebrew:
+    name: cmake
+    state: present
+
+- name: install libvterm
+  homebrew:
+    name: libvterm
+    state: present
+
 - name: tap emacs-plus cask
   homebrew_tap: 
     name: d12frosted/emacs-plus
     state: present
 
-- name: install emacs-plus on darwin
-  homebrew_cask:
-    name: emacs-plus
+- name: install emacs-plus
+  homebrew:
+    name: emacs-plus@27
     state: present
+    install_options: with-jansson	
+
+- name: symlink emacs client into application directory
+  file:
+    src: "{{ ansible_env.PWD }}/roles/emacs/files/EmacsClient.app"
+    path: "~/Applications/EmacsClient.app"
+    state: link
+    follow: false
+    force: yes
