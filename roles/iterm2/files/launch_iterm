@@ -1,0 +1,22 @@
+#!/usr/bin/osascript
+
+on run argv
+    if application "iTerm" is running then
+        tell application "iTerm"
+            create window with default profile
+        end tell
+    else
+        activate application "iTerm"
+    end if
+
+    if (count of argv) > 0 then
+        local itermDirectory
+        set itermDirectory to quoted form of (item 1 of argv)
+
+        tell application "iTerm"
+            tell current session of current window
+                write text "cd " & itermDirectory & " && clear"
+            end tell
+        end tell
+    end if
+end run

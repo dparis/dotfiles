@@ -8,7 +8,7 @@
     path: ~/.config/iterm2
     state: directory
 
-- name: symlink files
+- name: symlink files into config directory
   file:
     src: "{{ ansible_env.PWD }}/roles/iterm2/files/{{ item }}"
     path: "~/.config/iterm2/{{ item }}"
@@ -17,6 +17,14 @@
     force: yes
   loop:
     - "com.googlecode.iterm2.plist"
+
+- name: symlink launch_iterm script into home bin directory
+  file:
+    src: "{{ ansible_env.PWD }}/roles/iterm2/files/launch_iterm"
+    path: "~/bin/launch_iterm"
+    state: link
+    follow: false
+    force: yes
 
 - name: configure iterm2 to load prefs from custom directory
   command: "defaults write com.googlecode.iterm2.plist {{ item }}"

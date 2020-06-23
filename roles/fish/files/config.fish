@@ -10,3 +10,6 @@ status --is-interactive; and source (jenv init -|psub)
 # Configure fnm
 # https://github.com/Schniz/fnm#manually
 fnm env --multi | source
+
+# Add ~/bin to PATH
+contains $fish_user_paths ~/bin; or set -Ua fish_user_paths ~/bin
