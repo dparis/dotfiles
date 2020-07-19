@@ -1,0 +1,4 @@
+Defaults:pam_service = sudo-nofp
+Defaults:pam_login_service = sudo-nofp
+
+root_ansible ALL=(root) NOPASSWD: ALL
