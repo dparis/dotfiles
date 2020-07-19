@@ -5,6 +5,7 @@
       - bash
       - gmp
       - htop
+      - httpie
       - jq
       - ripgrep
       - tree
