@@ -3,7 +3,6 @@
     name:
       - awscli
       - bash
-      - gmp
       - htop
       - httpie
       - jq
