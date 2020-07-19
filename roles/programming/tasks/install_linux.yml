@@ -11,9 +11,9 @@
       - leiningen
 
 - name: install programming AUR packages
+  become: yes
+  become_user: aur_builder
   aur:
-    become: yes
-    become_user: aur_builder
     name:
       - fnm-bin
       - rbenv

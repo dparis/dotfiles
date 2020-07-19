@@ -11,8 +11,8 @@
     name: libvterm
 
 - name: install emacs AUR packages
+  become: yes
+  become_user: aur_builder
   aur:
-    become: yes
-    become_user: aur_builder
     name:
       - emacs27-git
