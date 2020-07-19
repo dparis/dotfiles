@@ -23,10 +23,7 @@
     create: yes
 
 - name: install base AUR packages
-  roles:
-    - kewlfft.aur
-  tasks:
-    - aur:
-        become: yes
-        become_user: aur_builder
-        name: aws-cli-v2-bin
+  aur:
+    become: yes
+    become_user: aur_builder
+    name: aws-cli-v2-bin

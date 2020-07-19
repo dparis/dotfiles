@@ -11,12 +11,9 @@
       - leiningen
 
 - name: install programming AUR packages
-  roles:
-    - kewlfft.aur
-  tasks:
-    - aur:
-        become: yes
-        become_user: aur_builder
-        name:
-          - fnm-bin
-          - rbenv
+  aur:
+    become: yes
+    become_user: aur_builder
+    name:
+      - fnm-bin
+      - rbenv

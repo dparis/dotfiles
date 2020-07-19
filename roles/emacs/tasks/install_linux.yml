@@ -11,11 +11,8 @@
     name: libvterm
 
 - name: install emacs AUR packages
-  roles:
-    - kewlfft.aur
-  tasks:
-    - aur:
-        become: yes
-        become_user: aur_builder
-        name:
-          - emacs27-git
+  aur:
+    become: yes
+    become_user: aur_builder
+    name:
+      - emacs27-git
