@@ -2,22 +2,8 @@
   hosts: localhost
   roles:
     - base
-    - locale
-    - git
-    - gnupg
-    - dunst
-    # - dwm
-    - bspwm
-    # - dmenu
-    # - zsh
+    - starship
     - fish
-    - alacritty
-    # - st
-    - ctags
-    - nvim
+    - programming
     - emacs
-    - dav
-    - ranger
-    - taskwarrior
-    - mail
-    - code
+    # - git

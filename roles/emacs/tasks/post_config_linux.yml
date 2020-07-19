@@ -1,0 +1,4 @@
+- name: start emacs daemon service
+  become: yes
+  become_user: aur_builder
+  command: systemctl --user enable --now emacs

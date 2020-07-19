@@ -1,0 +1,32 @@
+- name: install base packages
+  package:
+    name:
+      - htop
+      - httpie
+      - jq
+      - ripgrep
+      - tree
+      - wget
+      - yay
+
+- name: set up AUR build user
+  user:
+    name: aur_builder
+    group: wheel
+
+- name: enable AUR build user to access pacman
+  lineinfile:
+    path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
+    state: present
+    line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+    validate: /usr/sbin/visudo -cf %s
+    create: yes
+
+- name: install base AUR packages
+  roles:
+    - kewlfft.aur
+  tasks:
+    - aur:
+        become: yes
+        become_user: aur_builder
+        name: aws-cli-v2-bin

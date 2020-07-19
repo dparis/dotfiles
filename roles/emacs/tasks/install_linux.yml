@@ -1,0 +1,21 @@
+- name: install gnupg for verified packages from spacelpa
+  package:
+    name: gnupg
+
+- name: install cmake
+  package:
+    name: cmake
+
+- name: install libvterm
+  package:
+    name: libvterm
+
+- name: install emacs AUR packages
+  roles:
+    - kewlfft.aur
+  tasks:
+    - aur:
+        become: yes
+        become_user: aur_builder
+        name:
+          - emacs27-git

@@ -14,5 +14,3 @@
     force: yes
   loop:
     - .spacemacs
-
-# symlink files into .emacsd private

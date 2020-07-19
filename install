@@ -35,6 +35,15 @@ if [ "$os" = "Darwin" ]; then
                      mac.yml
 
 elif [ "$os" = "Linux" ]; then
+    if ! [ -x "$(command -v ansible-playbook)" ]; then
+        echo "Install ansible"
+        sudo pacman -S ansible
+    fi
+
+    echo "Install galaxy roles"
+    ansible-galaxy install -r galaxy_requirements.yml
+
+    echo "Running linux ansible playbook"
     ansible-playbook --ask-become-pass \
                      -i hosts \
                      linux.yml

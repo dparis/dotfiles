@@ -1,0 +1,22 @@
+- name: install jenv
+  git:
+    repo: https://github.com/jenv/jenv.git
+    dest: ~/.jenv
+    force: yes
+
+- name: install clojure
+  package:
+    name:
+      - clojure
+      - leiningen
+
+- name: install programming AUR packages
+  roles:
+    - kewlfft.aur
+  tasks:
+    - aur:
+        become: yes
+        become_user: aur_builder
+        name:
+          - fnm-bin
+          - rbenv
