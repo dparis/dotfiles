@@ -482,7 +482,11 @@ It should only modify the values of Spacemacs settings."
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs nil))
+   dotspacemacs-pretty-docs nil
+
+   ;; If nil the home buffer shows the full path of agenda items
+   ;; and todos. If non nil only the file name is shown.
+   dotspacemacs-home-shorten-agenda-source nil))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -513,14 +517,23 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; Set command key to send meta modifier on macs
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil))
+
+  ;; Disable rubocop for ruby-mode
   (add-hook
    'ruby-mode-hook
    (lambda ()
      (flycheck-disable-checker 'ruby-rubocop)))
 
+  ;; Keep old leader key seqs for repl-set-ns and alignment functions in clojure mode
   (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "sn" 'cider-repl-set-ns)
   (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "fl" 'clojure-align)
 
+  ;; Convenience function to apply a function to a selected region
   (require 'subr-x)
 
   (defun apply-function-to-region (fn)
@@ -535,24 +548,36 @@ before packages are loaded."
         (kill-region beg end)
         (insert resulting-text))))
 
-
+  ;; Convenience function to sort a comma-delimited string
   (defun sort-csv (txt)
     "Sort a comma separated string."
     (mapconcat 'identity
                (sort (mapcar 'string-trim (split-string txt ",")) 'string< ) ", "))
 
+  ;; Convenience function to sort a region containing comma delimited text
   (defun sort-csv-region ()
     "Sort a region of comma separated text."
     (interactive)
     (apply-function-to-region 'sort-csv))
 
+  ;; Function to launch iterm as an external terminal on macs,
+  ;; used when customizing terminal-here-terminal-command
   (defun terminal-here-custom-terminal-command (dir)
     "Return a list of strings representing terminal command and arguments"
     (cond
      ((eq system-type 'darwin)
       (list "launch_iterm" dir))
 
-     (t (terminal-here-default-terminal-command dir)))))
+     (t (terminal-here-default-terminal-command dir))))
+
+  ;; Set RET to use magit-diff-visit-file-other-window in magit
+  (with-eval-after-load 'magit-status
+    (define-key magit-file-section-map
+      [remap magit-visit-thing]
+      'magit-diff-visit-file-other-window)
+    (define-key magit-hunk-section-map
+      [remap magit-visit-thing]
+      'magit-diff-visit-file-other-window)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
