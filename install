@@ -50,15 +50,15 @@ elif [ "$os" = "Linux" ]; then
     if ! [ -f "/etc/sudoers/20-root-ansible" ]; then
         echo "Set up root_ansible user and sudoers"
         sudo useradd root_ansible
-        sudo cp sudoers/21-aur-ansible /etc/sudoers.d/21-aur-ansible
-        sudo chown root:root /etc/sudoers.d/21-aur-ansible
-        sudo chmod 440 /etc/sudoers.d/21-aur-ansible
+        sudo cp sudoers/20-root-ansible /etc/sudoers.d/20-root-ansible
+        sudo chown root:root /etc/sudoers.d/20-root-ansible
+        sudo chmod 440 /etc/sudoers.d/20-root-ansible
     fi
 
     if ! [ -f "/etc/sudoers/21-aur-ansible" ]; then
         echo "Set up aur_ansible user and sudoers"
         sudo useradd aur_ansible
-	sudo cp sudoers/21-aur-ansible /etc/sudoers.d/21-aur-ansible
+	      sudo cp sudoers/21-aur-ansible /etc/sudoers.d/21-aur-ansible
         sudo chown root:root /etc/sudoers.d/21-aur-ansible
         sudo chmod 440 /etc/sudoers.d/21-aur-ansible
     fi
