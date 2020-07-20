@@ -1,4 +1,5 @@
-Defaults:pam_service = sudo-nofp
-Defaults:pam_login_service = sudo-nofp
+Defaults:aur_ansible pam_service = sudo-nofp
+Defaults:aur_ansible pam_login_service = sudo-nofp
 
 aur_ansible ALL=(root) NOPASSWD: /usr/bin/pacman
+
