@@ -5,6 +5,8 @@
     force: yes
 
 - name: install clojure
+  become: yes
+  become_user: root_ansible
   package:
     name:
       - clojure

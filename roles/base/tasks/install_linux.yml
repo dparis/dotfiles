@@ -1,4 +1,6 @@
 - name: install base packages
+  become: yes
+  become_user: root_ansible
   package:
     name:
       - htop
@@ -10,11 +12,15 @@
       - yay
 
 - name: set up AUR build user
+  become: yes
+  become_user: root_ansible
   user:
     name: aur_builder
     group: wheel
 
 - name: enable AUR build user to access pacman
+  become: yes
+  become_user: root_ansible
   lineinfile:
     path: /etc/sudoers.d/aur_builder-allow-to-sudo-pacman
     state: present

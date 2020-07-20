@@ -1,12 +1,18 @@
 - name: install gnupg for verified packages from spacelpa
+  become: yes
+  become_user: root_ansible
   package:
     name: gnupg
 
 - name: install cmake
+  become: yes
+  become_user: root_ansible
   package:
     name: cmake
 
 - name: install libvterm
+  become: yes
+  become_user: root_ansible
   package:
     name: libvterm
 
