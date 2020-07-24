@@ -1,13 +1,11 @@
 - name: make sure fish is installed
   become: yes
-  become_user: root_ansible
   package:
-    name: fish
-    state: present
+    name:
+      - fish
 
 - name: set fish as default shell
   become: yes
-  become_user: root_ansible
   user:
     name: "{{ ansible_env.USER }}"
-    shell: /usr/local/bin/fish
+    shell: /usr/bin/fish

@@ -6,15 +6,12 @@
 
 - name: install clojure
   become: yes
-  become_user: root_ansible
   package:
     name:
       - clojure
       - leiningen
 
 - name: install programming AUR packages
-  become: yes
-  become_user: aur_builder
   aur:
     name:
       - fnm-bin

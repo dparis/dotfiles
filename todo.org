@@ -1,10 +1,16 @@
-* Dotfiles Todo [1/9]
+* Dotfiles Todo [2/15]
   - [X] Add launch_iterm to ~/bin as part of iterm install
   - [ ] Add docker
-  - [ ] Configure for linux
+  - [X] Configure for linux
   - [ ] Create facility for work-specific ENV vars/config
   - [ ] Tweak starship config
   - [ ] Write quick readme
   - [ ] Set up ansible role dependencies
   - [ ] Follow up on https://github.com/syl20bnr/spacemacs/issues/13689
   - [ ] Create some yasnippets and add them to emacs config
+  - [ ] Fix mac config symlinks; create config dirs first
+  - [ ] Fix jenv-sh-rehash issue https://github.com/jenv/jenv/pull/290/files
+  - [ ] Fix systemd emacs post_install
+  - [ ] Fix mac vs linux emacs font config; name isn't consistent, maybe template
+  - [ ] Always restart emacs server from systemd
+  - [ ] Set up emacsclient.desktop; emacsclient -c

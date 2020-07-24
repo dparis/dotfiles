@@ -1,6 +1,6 @@
 - name: install starship AUR packages
   become: yes
-  become_user: aur_builder
+  become_user: aur_ansible
   aur:
     name:
       - nerd-fonts-jetbrains-mono
