@@ -1,0 +1,51 @@
+
+* DONE Add launch_iterm to ~/bin as part of iterm install 
+  CLOSED: [2020-07-24 Fri 09:39]
+
+* TODO Add docker
+
+* DONE Configure for linux
+  CLOSED: [2020-07-24 Fri 09:40]
+
+* TODO Create facility for work-specific ENV vars/config
+  
+* TODO Tweak starship config
+  
+* TODO Write quick readme
+  
+* TODO Set up ansible role dependencies
+  
+* TODO Follow up on https://github.com/syl20bnr/spacemacs/issues/13689
+  
+* TODO Create some yasnippets and add them to emacs config
+  
+* TODO Fix mac config symlinks; create config dirs first
+  
+* TODO Fix jenv-sh-rehash issue https://github.com/jenv/jenv/pull/290/files
+  
+* TODO Fix systemd emacs post_install
+  
+* TODO Fix mac vs linux emacs font config; name isn't consistent, maybe template
+  
+* TODO Always restart emacs server from systemd
+  
+* TODO Set up emacsclient.desktop; emacsclient -c
+
+* TODO Configure rust in spacemacs [0/3]
+  
+  https://www.spacemacs.org/layers/+lang/rust/README.html
+  
+  - [ ] Add rust layer in spacemacs
+  - [ ] Install rustup 
+  
+    https://rustup.rs/
+    
+  - [ ] Install racer 
+
+* TODO Install Godot [0/2]
+  - [ ] Install in linux
+   
+    https://wiki.archlinux.org/index.php/Godot_Engine
+  
+  - [ ] Install mac
+ 
