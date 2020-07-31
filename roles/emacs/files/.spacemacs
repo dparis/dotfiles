@@ -595,8 +595,7 @@ This function is called at the very end of Spacemacs initialization."
  '(helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
  '(helm-completion-style 'emacs)
  '(js-indent-level 2)
- '(org-agenda-files
-   '("~/work/notes/todo.org" "~/work/notes/data_platform/data_platform.org" "~/work/notes/code_quality/code_quality.org" "~/work/notes/analytics/analytics.org"))
+ '(org-agenda-files '("~/projects" "~/work" "~/org"))
  '(org-default-priority 68)
  '(org-lowest-priority 68)
  '(org-todo-keywords
