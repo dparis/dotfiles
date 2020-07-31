@@ -21,3 +21,7 @@
   homebrew:
     name: Schniz/tap/fnm
     state: present
+
+# Rust
+- name: install rust via rustup
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y

@@ -12,3 +12,24 @@
   with_items:
     - jenv.fish
     - export.fish
+
+# Rust
+- name: ensure fish completion directory
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+    recurse: yes
+
+- name: install rustup completions for fish shell
+  shell: ~/.cargo/bin/rustup completions fish > ~/.config/fish/completions/rustup.fish
+  args:
+    creates: ~/.config/fish/completions/rustup.fish
+
+- name: install rust nightly
+  shell: rustup toolchain add nightly
+
+- name: install racer
+  shell: cargo +nightly install racer
+
+- name: install rust src
+  shell: rustup component add rust-src

@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      org
+     rust
      (shell :variables
             shell-default-shell 'vterm
             shell-default-height 30

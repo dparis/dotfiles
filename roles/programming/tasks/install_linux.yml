@@ -11,6 +11,9 @@
       - clojure
       - leiningen
 
+- name: install rust via rustup
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+
 - name: install programming AUR packages
   aur:
     name:

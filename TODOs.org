@@ -31,18 +31,21 @@
   
 * TODO Set up emacsclient.desktop; emacsclient -c
 
-* TODO Configure rust in spacemacs [0/3]
+* DONE Configure rust in spacemacs [5/5]
+  CLOSED: [2020-07-31 Fri 15:50]
   
   https://www.spacemacs.org/layers/+lang/rust/README.html
   
-  - [ ] Add rust layer in spacemacs
-  - [ ] Install rustup 
+  - [X] Add rust layer in spacemacs
+  - [X] Install rustup 
   
     https://rustup.rs/
     
-  - [ ] Install racer 
+  - [X] Install racer
+  - [X] Configure linux installation through dotfiles
+  - [X] Configure mac installation through dotfiles
 
-* TODO Install Godot [0/2]
+* PROGRESS Install Godot [0/2]
   - [ ] Install in linux
    
     https://wiki.archlinux.org/index.php/Godot_Engine
