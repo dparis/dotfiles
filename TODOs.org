@@ -45,10 +45,11 @@
   - [X] Configure linux installation through dotfiles
   - [X] Configure mac installation through dotfiles
 
-* PROGRESS Install Godot [0/2]
-  - [ ] Install in linux
+* DONE Install Godot [2/2]
+  CLOSED: [2020-07-31 Fri 16:20]
+  - [X] Install in linux
    
     https://wiki.archlinux.org/index.php/Godot_Engine
   
-  - [ ] Install mac
+  - [X] Install mac
  

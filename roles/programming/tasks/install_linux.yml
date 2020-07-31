@@ -18,4 +18,13 @@
   aur:
     name:
       - fnm-bin
+      - godot
       - rbenv
+
+- name: install llvm toolchain
+  become: yes
+  package:
+    name:
+      - clang
+      - lld
+      - lldb

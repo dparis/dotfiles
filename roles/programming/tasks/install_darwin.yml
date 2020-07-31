@@ -25,3 +25,15 @@
 # Rust
 - name: install rust via rustup
   shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Godot engine
+- name: install godot engine
+  homebrew_cask:
+    name: godot
+    state: present
+
+# LLVM Compiler
+- name: install llvm toolchain
+  homebrew:
+    name: llvm
+    state: present
