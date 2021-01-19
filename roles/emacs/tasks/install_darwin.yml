@@ -20,9 +20,9 @@
 
 - name: install emacs-plus
   homebrew:
-    name: emacs-plus@27
+    name: emacs-plus@28
     state: present
-    install_options: with-jansson	
+    install_options: with-native-comp
 
 - name: symlink emacs client into application directory
   file:
