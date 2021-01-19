@@ -9,7 +9,7 @@ status --is-interactive; and source (jenv init -|psub)
 
 # Configure fnm
 # https://github.com/Schniz/fnm#manually
-fnm env --multi | source
+fnm env | source
 
 # Configure rust/cargo
 set -x PATH $HOME/.cargo/bin $PATH
